@@ -1,0 +1,192 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master_Page.master.cs" Inherits="AHZ_Online_Library.Master_Page" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <title>Master Page</title>
+
+
+    <!-- Bootstrap css -->
+    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- datatables css -->
+    <link href="datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <!-- fontawsome css -->
+    <link href="fontawsome/css/all.css" rel="stylesheet" />
+
+    <!-- custom bootstrap -->
+    <link href="css/customstylesheet.css" rel="stylesheet" />
+
+    <!-- jquery -->
+    <script src="Bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+    <!-- popper js -->
+    <script src="Bootstrap/js/popper.min.js"></script>
+    <!-- Bootstrap js-->
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style>
+        
+        footer{
+            height:"40";
+
+        }
+        body {
+            background-image: url('img/book%20(1).jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100%;
+            font-family: 'Dancing Script', cursive!important;
+            
+        }
+         .footerlinks {
+    color: #ffffff;
+    text-decoration: none !important;
+}
+ 
+.footerlinks:hover {
+        color: #ffd800;
+    }
+ 
+#footer1 {
+    background: #404040;
+}
+ 
+#footer2 {
+    background: black;
+}
+    </style>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+    </script>
+
+ <script> 
+$(document).ready(function(){
+  $("#flip").click(function(){
+      $("#panel").slideToggle("slow");
+  });
+});
+ </script>
+</head>
+    
+<body>
+    
+    <form id="form1" runat="server">
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+               <a class="navbar-brand" href="Home Page.aspx"> 
+                   <img src="img/AHZ_OL-Logo_V2.png" width="70" height="70" id="logo" alt=""/>
+               </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="Home Page.aspx">Home</a>
+                        </li>
+                        <%--<li class="nav-item active">
+                            <a class="nav-link" href="#">Category</a>
+                        </li>--%>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="View Books.aspx">View Books</a>
+                        </li>
+ 
+                    </ul>
+ 
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Login</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Sign Up</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server" OnClick="LinkButton3_Click" Visible="False">Logout</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton4" runat="server">Terms</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton5" runat="server">About Us</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton6" runat="server" OnClick="LinkButton6_Click" Visible="False">User Profile</asp:LinkButton>
+ 
+                        </li>
+                    </ul>
+                </div>
+ 
+ 
+            </nav>
+        </header>
+         <!-- Main contenter starts-->
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!-- Main contenter ends -->
+
+         <!-- Footer starts here -->
+        <footer>
+            <div id="footer1" class="container-fluid">
+                <div class="row" >
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <p>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton7" runat="server" OnClick="LinkButton7_Click">Admin Login</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton8" runat="server" OnClick="LinkButton8_Click" Visible="False">Author Management</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton9" runat="server" OnClick="LinkButton9_Click" Visible="False">Publisher Management</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton10" runat="server" OnClick="LinkButton10_Click" Visible="False">Book Management</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton11" runat="server" OnClick="LinkButton11_Click" Visible="False">Book Issuing</asp:LinkButton>
+                            &nbsp;
+                             <asp:LinkButton class="footerlinks" ID="LinkButton12" runat="server" OnClick="LinkButton12_Click" Visible="False">Member Management</asp:LinkButton>
+                        </p>
+ 
+                    </div>
+ 
+                </div>
+            </div>
+              <div id="footer2" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <p >&copy All right Reversed. <a class="footerlinks" href="#" target="_blank">Simple Snippets</a></p>
+                          <div class="row">
+          <div class="col-sm-12 col-md-4">
+            <h6 id="flip">About us</h6>
+            <p id="panel" class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+          </div>
+     <div class="col-sm-12 col-md-4">
+            <h6>contact us</h6>
+             <a class="fa fa-facebook-square" style="font-size:30px;color:gray"></a>
+                         <a class="fa fa-instagram" style="font-size:30px;color:gray"></a>
+                         <a class="fa fa-google" style="font-size:30px;color:gray"></a>
+                         <a class="fa fa-twitter-square" style="font-size:30px;color:gray"></a>
+            
+
+                    </div>
+                                <div class="col-sm-12 col-md-4">
+            <h6>Languages</h6>
+           <div  id="google_translate_element"></div>                        
+            
+
+                    </div>
+                        
+                  
+                </div>
+            </div>
+ 
+        </footer>
+        <!-- Footer end here -->
+    </form>
+</body>
+</html>
